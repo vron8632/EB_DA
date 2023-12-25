@@ -1,82 +1,41 @@
-## DAFormer: Improving Network Architectures and Training Strategies for Domain-Adaptive Semantic Segmentation
+## Entropy Balancing Strategy for Domain Adaptive Semantic Segmentation
 
-**by [Lukas Hoyer](https://lhoyer.github.io/), [Dengxin Dai](https://vas.mpi-inf.mpg.de/dengxin/), and [Luc Van Gool](https://scholar.google.de/citations?user=TwMib_QAAAAJ&hl=en)**
-
-**[[Arxiv]](https://arxiv.org/abs/2111.14887)**
-**[[Paper]](https://arxiv.org/pdf/2111.14887.pdf)**
-
-:bell: We are happy to announce that DAFormer was accepted at **CVPR22**. :bell:
-
-:bell: We are happy to announce that our follow-up work [HRDA](https://github.com/lhoyer/HRDA) on high-resolution UDA was accepted at **ECCV22**. :bell:
 
 ## Overview
 
-As acquiring pixel-wise annotations of real-world images for semantic
-segmentation is a costly process, a model can instead be trained with more
-accessible synthetic data and adapted to real images without requiring their
-annotations. This process is studied in **Unsupervised Domain Adaptation (UDA)**.
-
-Even though a large number of methods propose new UDA strategies, they
-are mostly based on outdated network architectures. In this work, we
-particularly study the influence of the network architecture on UDA performance
-and propose **DAFormer**, a network architecture tailored for UDA. It consists of a
-Transformer encoder and a multi-level context-aware feature fusion decoder.
-
-DAFormer is enabled by three simple but crucial training strategies to stabilize the
-training and to avoid overfitting the source domain: While the
-**Rare Class Sampling** on the source domain improves the quality of pseudo-labels
-by mitigating the confirmation bias of self-training towards common classes,
-the **Thing-Class ImageNet Feature Distance** and a **Learning Rate Warmup** promote
-feature transfer from ImageNet pretraining.
-
-DAFormer significantly improves
-the state-of-the-art performance **by 10.8 mIoU for GTA→Cityscapes**
-and **by 5.4 mIoU for Synthia→Cityscapes** and enables learning even
-difficult classes such as train, bus, and truck well.
+In the self-training method for unsupervised domain adaptation semantic segmentation tasks, due to domain shift and
+lack of manual labeling, pseudo-labels inevitably contain
+noise. Existing methods usually alleviate the noise from
+pseudo-labels by entropy regularization. However, excessive
+regularization weakens the correct pseudo-labels and limits the performance of the principle of self-training entropy
+minimization. On the basis of mixing the source domain
+and the target domain, this paper further considers the entropy balancing strategy to “smooth out peaks and valleys”
+of the entropy in the mixed domain, placing it in a relatively
+balanced position. This is beneficial for increasing the prediction values with low certainty and reducing overconfident
+prediction values. Our method is based on the widely adopted
+Transformer baseline method DAFormer and obtains significant performance improvement by adding an entropy balance
+loss in two adaptive semantic segmentation tasks: Cityscapes
+→ ACDC and Cityscapes → FoggyCityscapes + RainCityscapes. Even under low resolution and limited graphics
+memory conditions, our method still achieves competitive
+results.
 
 ![UDA over time](resources/uda_over_time.png)
 
-The strengths of DAFormer, compared to the previous state-of-the-art UDA method
-ProDA, can also be observed in qualitative examples from the Cityscapes
-validation set.
-
-![Demo](resources/demo.gif)
-![Color Palette](resources/color_palette.png)
-
-For more information on DAFormer, please check our
-[[Paper]](https://arxiv.org/pdf/2111.14887.pdf).
-
-If you find this project useful in your research, please consider citing:
-
-```
-@InProceedings{hoyer2022daformer,
-  title={{DAFormer}: Improving Network Architectures and Training Strategies for Domain-Adaptive Semantic Segmentation},
-  author={Hoyer, Lukas and Dai, Dengxin and Van Gool, Luc},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  pages={9924--9935},
-  year={2022}
-}
-```
 
 ## Comparison with State of the Art
 
-DAFormer significantly outperforms previous works on several UDA benchmarks.
-This includes synthetic-to-real adaptation on GTA→Cityscapes and
-Synthia→Cityscapes as well as clear-to-adverse-weather adaptation on
-Cityscapes→ACDC and Cityscapes→DarkZurich.
 
-|                     | GTA→CS(val)    | Synthia→CS(val)    | CS→ACDC(test)   | CS→DarkZurich(test)   |
-|---------------------|----------------|--------------------|-----------------|-----------------------|
-| ADVENT [1]          | 45.5           | 41.2               | 32.7            | 29.7                  |
-| BDL [2]             | 48.5           | --                 | 37.7            | 30.8                  |
-| FDA [3]             | 50.5           | --                 | 45.7            | --                    |
-| DACS [4]            | 52.1           | 48.3               | --              | --                    |
-| ProDA [5]           | 57.5           | 55.5               | --              | --                    |
-| MGCDA [6]           | --             | --                 | 48.7            | 42.5                  |
-| DANNet [7]          | --             | --                 | 50.0            | 45.2                  |
-| **DAFormer (Ours)** | **68.3**       | **60.9**           | **55.4***       | **53.8***             |
-
-&ast; New results obtained after CVPR'22 publication of DAFormer
+|                     |CS→ACDC(test)   |
+|---------------------|----------------|
+| ADVENT [1]          | 32.7           |
+| BDL [2]             | 37.7           |
+| FDA [3]             | 45.7           |
+| DACS [4]            | --             |
+| ProDA [5]           | --             |
+| MGCDA [6]           | 48.7           |
+| DANNet [7]          | 50.0           |
+| DAFormer            | 55.4           |
+| **EBDA (Ours)**     | **58.75***     |
 
 References:
 
