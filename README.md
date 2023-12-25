@@ -29,23 +29,19 @@ results.
 | ADVENT [1]          | 32.7           |
 | BDL [2]             | 37.7           |
 | FDA [3]             | 45.7           |
-| DACS [4]            | --             |
-| ProDA [5]           | --             |
-| MGCDA [6]           | 48.7           |
-| DANNet [7]          | 50.0           |
-| DAFormer [8]        | 55.4           |
-| **EBDA (Ours)**     | **58.75***     |
+| MGCDA [4]           | 48.7           |
+| DANNet [5]          | 50.0           |
+| DAFormer [6]        | 55.4           |
+| **EBDA (Ours)**     | **58.75**      |
 
 References:
 
 1. Vu et al. "Advent: Adversarial entropy minimization for domain adaptation in semantic segmentation" in CVPR 2019.
 2. Li et al. "Bidirectional learning for domain adaptation of semantic segmentation" in CVPR 2019.
 3. Yang et al. "Fda: Fourier domain adaptation for semantic segmentation" in CVPR 2020.
-4. Tranheden et al. "Dacs: Domain adaptation via crossdomain mixed sampling" in WACV 2021.
-5. Zhang et al. "Prototypical pseudo label denoising and target structure learning for domain adaptive semantic segmentation" in CVPR 2021.
-6. Sakaridis et al. "Map-guided curriculum domain adaptation and uncertaintyaware evaluation for semantic nighttime image segmentation" in TPAMI, 2020.
-7. Wu et al. "DANNet: A one-stage domain adaptation network for unsupervised nighttime semantic segmentation" in CVPR, 2021.
-8. Lukas et al. "DAFormer: Improving Network Architectures and Training Strategies for Domain-Adaptive Semantic Segmentation" in CVPR, 2022.
+4. Sakaridis et al. "Map-guided curriculum domain adaptation and uncertaintyaware evaluation for semantic nighttime image segmentation" in TPAMI, 2020.
+5. Wu et al. "DANNet: A one-stage domain adaptation network for unsupervised nighttime semantic segmentation" in CVPR, 2021.
+6. Lukas et al. "DAFormer: Improving Network Architectures and Training Strategies for Domain-Adaptive Semantic Segmentation" in CVPR, 2022.
 
 ## Setup Environment
 
