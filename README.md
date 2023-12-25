@@ -19,8 +19,6 @@ loss in two adaptive semantic segmentation tasks: Cityscapes
 memory conditions, our method still achieves competitive
 results.
 
-![UDA over time](resources/uda_over_time.png)
-
 
 ## Comparison with State of the Art
 
