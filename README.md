@@ -19,6 +19,7 @@ loss in two adaptive semantic segmentation tasks: Cityscapes
 memory conditions, our method still achieves competitive
 results.
 
+![image](https://github.com/vron8632/EB_DA/blob/main/asserts/qualitative.jpg)
 
 ## Comparison with State of the Art
 
