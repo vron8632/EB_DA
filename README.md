@@ -33,7 +33,7 @@ results.
 | ProDA [5]           | --             |
 | MGCDA [6]           | 48.7           |
 | DANNet [7]          | 50.0           |
-| DAFormer            | 55.4           |
+| DAFormer [8]        | 55.4           |
 | **EBDA (Ours)**     | **58.75***     |
 
 References:
