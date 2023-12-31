@@ -34,6 +34,9 @@ results.
 | DAFormer [6]        | 55.4           |
 | **EBDA (Ours)**     | **58.75**      |
 
+CS→ACDC(test) results on ACDC website:
+![image]([https://github.com/vron8632/EB_DA/tree/main/asserts/ACDC results.png]
+
 References:
 
 1. Vu et al. "Advent: Adversarial entropy minimization for domain adaptation in semantic segmentation" in CVPR 2019.
