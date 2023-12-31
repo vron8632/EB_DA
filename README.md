@@ -267,7 +267,7 @@ The most relevant files for DAFormer are:
   Implementation of Mix Transformer encoder (MiT).
   
 ## Major changes based on DAFormer
-The main modified file is located in mseg/models/uda/ dcs.py
+The main modified file is located in mseg/models/uda/dacs.py
 
 ## Acknowledgements
 
