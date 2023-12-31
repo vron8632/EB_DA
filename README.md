@@ -35,7 +35,7 @@ results.
 | **EBDA (Ours)**     | **58.75**      |
 
 CS→ACDC(test) results on ACDC website:
-![image]([https://github.com/vron8632/EB_DA/tree/main/asserts/ACDC results.png]
+![image]([https://github.com/vron8632/EB_DA/tree/main/asserts/ACDC_results.png]
 
 References:
 
