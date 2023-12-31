@@ -68,6 +68,8 @@ the instructions for a manual download within the script.
 sh tools/download_checkpoints.sh
 ```
 
+All the pretrained checkpoints can be downloaded in：https://pan.baidu.com/s/1EEhPDmWe_PAWjjByFaXxiA pin：4oty 
+
 All experiments were executed on a NVIDIA RTX 2080 Ti.
 
 ## Inference Demo
@@ -111,6 +113,8 @@ rsync -a data/acdc/gt/*/val/*/*_labelTrainIds.png data/acdc/gt/val/
 and Dark_Zurich_val_anon.zip from
 [here](https://www.trace.ethz.ch/publications/2019/GCMA_UIoU/) and extract it
 to `data/dark_zurich`.
+
+all the datasets can be downloaded in：https://pan.baidu.com/s/1fNvXAefnuUN2fPBStGz16w pin：5lg8 
 
 The final folder structure should look like this:
 
@@ -230,6 +234,7 @@ seeds, we provide the checkpoint with the median validation performance here.
 * [DAFormer for Cityscapes→ACDC](https://drive.google.com/file/d/16RSBkzJbGprWr04LjyNleqRzRZgCaEBn/view?usp=sharing)
 * [DAFormer for Cityscapes→DarkZurich](https://drive.google.com/file/d/1_VXKDhnp4x4sslBj5B8tqqBJXeOuI9hS/view?usp=sharing)
 
+
 The checkpoints come with the training logs. Please note that:
 
 * The logs provide the mIoU for 19 classes. For Synthia→Cityscapes, it is
@@ -260,6 +265,9 @@ The most relevant files for DAFormer are:
   Implementation of DAFormer decoder with context-aware feature fusion.
 * [mmseg/models/backbones/mix_transformer.py](mmseg/models/backbones/mix_transformer.py):
   Implementation of Mix Transformer encoder (MiT).
+  
+## Major changes based on DAFormer
+The main modified file is located in mseg/models/uda/ dcs.py
 
 ## Acknowledgements
 
@@ -269,6 +277,7 @@ authors for making the source code publically available.
 * [MMSegmentation](https://github.com/open-mmlab/mmsegmentation)
 * [SegFormer](https://github.com/NVlabs/SegFormer)
 * [DACS](https://github.com/vikolss/DACS)
+* [DAFormer](https://github.com/lhoyer/DAFormer)
 
 ## License
 
